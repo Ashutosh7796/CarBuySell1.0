@@ -45,10 +45,12 @@ public class UsernameAuthenticationProvider implements AuthenticationProvider {
     private List<GrantedAuthority> getGrantedAuthorities(Set<Role> authorities) {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         for (Role authority : authorities) {
-            grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName()));
+            grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName().toString()));
         }
         return grantedAuthorities;
     }
+
+
 
     @Override
     public boolean supports(Class<?> authenticationType) {

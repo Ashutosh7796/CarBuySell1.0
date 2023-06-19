@@ -30,9 +30,9 @@ public class Role {
 
     private int id;
 
-    @Column(name = "role", nullable = false, length = 45)
-    private String name;
 
+    @Enumerated(EnumType.STRING)
+    private ERole name;
 
 
 }
